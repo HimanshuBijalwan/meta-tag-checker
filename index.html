@@ -3,29 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meta Tag Checker Pro</title>
+  <title>Meta Tag Checker - MDB Style</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body>
-  <div class="container pro">
-    <h1><span class="logo">🔎</span> Meta Tag Checker <span class="pro-badge">PRO</span></h1>
-    <div class="input-group">
-      <input type="text" id="urlInput" placeholder="Paste a URL for live meta check...">
-      <button id="fetchBtn">Fetch</button>
+<body style="background: #f5f6fa;">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-md-9">
+        <div class="card shadow-lg border-0 rounded-4">
+          <div class="card-body p-4">
+            <div class="text-center mb-4">
+              <i class="fa-solid fa-tags fa-2x text-primary mb-2"></i>
+              <h2 class="fw-bold mb-1">Meta Tag Checker</h2>
+              <p class="text-muted mb-0">Generate, edit, and preview meta tags for SEO & social media</p>
+            </div>
+            <div class="mb-3 input-group">
+              <input type="text" id="urlInput" class="form-control" placeholder="Paste a URL for live meta check...">
+              <button id="fetchBtn" class="btn btn-primary"><i class="fa fa-globe"></i> Fetch</button>
+            </div>
+            <div class="mb-3">
+              <textarea id="htmlInput" class="form-control" rows="6" placeholder="Paste your HTML here..."></textarea>
+            </div>
+            <div class="d-flex gap-2 mb-3">
+              <button id="checkBtn" class="btn btn-success flex-fill"><i class="fa fa-search"></i> Check Meta Tags</button>
+              <button id="copyBtn" class="btn btn-outline-secondary flex-fill"><i class="fa fa-copy"></i> Copy HTML</button>
+            </div>
+            <div id="editMeta" class="mb-3"></div>
+            <div id="results" class="mb-3"></div>
+            <div id="previews"></div>
+          </div>
+        </div>
+        <div class="text-center mt-4 text-muted small">Made with <span style="color:#e25555">♥</span> for SEOs & devs | <a href="https://github.com/himanshubijalwan/meta-tag-checker" target="_blank">GitHub</a></div>
+      </div>
     </div>
-    <textarea id="htmlInput" placeholder="Paste your HTML here..."></textarea>
-    <div class="action-row">
-      <button id="checkBtn">Check Meta Tags</button>
-      <button id="copyBtn">Copy HTML</button>
-    </div>
-    <div id="editMeta"></div>
-    <div id="results"></div>
-    <div id="previews"></div>
   </div>
-  <footer>Made with <span style="color:#e25555">♥</span> for SEOs &amp; devs</footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

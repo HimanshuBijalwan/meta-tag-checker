@@ -1,17 +1,21 @@
-# Meta Tag Checker
+# Meta Tag Checker (MDB Style)
 
-A simple web tool to check for important meta tags in your HTML, including Open Graph (`og:image`), Twitter Card, SERP title, and description.
+A professional, modern web tool to check, generate, edit, and preview meta tags for SEO and social media. Inspired by MDBootstrap's design.
 
 ## Features
-- Paste your HTML and instantly see if key meta tags are present
-- Highlights missing tags in red and found tags in green
-- Shows a preview of the `og:image` if available
+- **Paste HTML** or **fetch live meta tags** from any website URL
+- **Edit meta tags** (title, description, og:image, twitter:card) with instant update
+- **Copy HTML** to clipboard
+- **Visual previews** for SERP, Twitter Card, and Social Card
+- **MDBootstrap/Bootstrap 5 inspired UI** with icons and responsive card layout
 - 100% client-side, no backend required
 
 ## Usage
-1. Open `index.html` in your browser, or visit the [GitHub Pages site](https://himanshubijalwan.github.io/meta-tag-checker/) (if enabled).
-2. Paste your HTML into the textarea.
-3. Click **Check Meta Tags** to see the results.
+1. **Open `index.html` in your browser** or visit the [GitHub Pages site](https://himanshubijalwan.github.io/meta-tag-checker/) (if enabled).
+2. Paste a URL and click **Fetch** to load live meta tags, or paste your own HTML.
+3. Click **Check Meta Tags** to analyze.
+4. Edit meta tags in the form and see instant updates and previews.
+5. Click **Copy HTML** to copy the updated HTML to your clipboard.
 
 ## Deployment
 To make this site live with GitHub Pages:
