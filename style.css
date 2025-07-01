@@ -1,9 +1,28 @@
 body {
   font-family: 'Inter', Arial, sans-serif;
-  background: #f5f6fa;
+  background: linear-gradient(120deg, #e0e7ff 0%, #f5f6fa 100%);
+  min-height: 100vh;
+}
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-top: 60px;
+  padding-bottom: 40px;
 }
 .card {
-  border-radius: 1.5rem !important;
+  border-radius: 2rem !important;
+  max-width: 950px;
+  margin: 0 auto;
+  box-shadow: 0 8px 32px 0 rgba(80,80,180,0.13), 0 1.5px 8px 0 rgba(0,0,0,0.04);
+  background: linear-gradient(120deg, #fff 80%, #e0e7ff 100%);
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+.card:hover {
+  box-shadow: 0 16px 48px 0 rgba(80,80,180,0.18), 0 3px 16px 0 rgba(0,0,0,0.07);
+  transform: translateY(-4px) scale(1.01);
+}
+.card-body {
+  padding: 2.7rem 3.2rem !important;
 }
 #editMeta label {
   font-weight: 500;
@@ -11,21 +30,40 @@ body {
 }
 #editMeta input {
   margin-bottom: 0.7em;
-  border-radius: 0.5em;
-  border: 1px solid #d1d5db;
-  padding: 0.4em 0.7em;
+  border-radius: 0.7em;
+  border: 1.5px solid #bfcfff;
+  padding: 0.5em 0.9em;
   width: 100%;
+  font-size: 1.13em;
+  background: #f8faff;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+#editMeta input:focus {
+  border: 1.5px solid #4f8cff;
+  box-shadow: 0 0 0 2px #e0e7ff;
 }
 #editMeta button {
   margin-top: 0.5em;
   width: 100%;
+  background: linear-gradient(90deg, #4f8cff 0%, #7c3aed 100%);
+  color: #fff;
+  border: none;
+  border-radius: 0.7em;
+  font-weight: 600;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #e0e7ff;
+}
+#editMeta button:hover {
+  background: linear-gradient(90deg, #7c3aed 0%, #4f8cff 100%);
+  box-shadow: 0 4px 16px #bfcfff;
 }
 #results ul {
   padding-left: 1.2em;
 }
 .found { color: #22c55e; font-weight: 600; }
 .missing { color: #ef4444; font-weight: 600; }
-.img-preview { max-width: 100%; max-height: 120px; display: block; margin: 10px 0; border-radius: 8px; box-shadow: 0 2px 8px #e0e7ff; }
+.img-preview { max-width: 100%; max-height: 180px; display: block; margin: 10px 0; border-radius: 12px; box-shadow: 0 2px 12px #e0e7ff; transition: box-shadow 0.2s; }
+.img-preview:hover { box-shadow: 0 6px 24px #bfcfff; }
 #previews h3 { font-size: 1.1em; margin-top: 1.5em; }
 #previews > div { margin-bottom: 1.2em; }
 ::-webkit-scrollbar {
@@ -36,13 +74,36 @@ body {
   background: #bfcfff;
   border-radius: 8px;
 }
-@media (max-width: 767px) {
+.btn-primary, .btn-success, .btn-outline-secondary {
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+}
+.btn-primary:hover {
+  background: linear-gradient(90deg, #7c3aed 0%, #4f8cff 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 16px #bfcfff;
+}
+.btn-success:hover {
+  background: linear-gradient(90deg, #22c55e 0%, #4f8cff 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 16px #bfcfff;
+}
+.btn-outline-secondary:hover {
+  background: #e0e7ff !important;
+  color: #4f8cff !important;
+  box-shadow: 0 2px 8px #bfcfff;
+}
+@media (max-width: 991px) {
   .card-body {
     padding: 1.2rem !important;
   }
   .container {
     padding-left: 0.5rem !important;
     padding-right: 0.5rem !important;
+  }
+}
+@media (max-width: 767px) {
+  .card {
+    max-width: 100%;
   }
   #editMeta input {
     font-size: 1em;
