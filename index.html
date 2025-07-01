@@ -3,16 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meta Tag Checker</title>
+  <title>Meta Tag Checker Pro</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>Meta Tag Checker</h1>
+  <div class="container pro">
+    <h1><span class="logo">🔎</span> Meta Tag Checker <span class="pro-badge">PRO</span></h1>
+    <div class="input-group">
+      <input type="text" id="urlInput" placeholder="Paste a URL for live meta check...">
+      <button id="fetchBtn">Fetch</button>
+    </div>
     <textarea id="htmlInput" placeholder="Paste your HTML here..."></textarea>
-    <button id="checkBtn">Check Meta Tags</button>
+    <div class="action-row">
+      <button id="checkBtn">Check Meta Tags</button>
+      <button id="copyBtn">Copy HTML</button>
+    </div>
+    <div id="editMeta"></div>
     <div id="results"></div>
+    <div id="previews"></div>
   </div>
+  <footer>Made with <span style="color:#e25555">♥</span> for SEOs &amp; devs</footer>
   <script src="app.js"></script>
 </body>
 </html>
