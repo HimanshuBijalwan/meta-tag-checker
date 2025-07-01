@@ -1,0 +1,30 @@
+{
+  "name": "meta-tag-checker",
+  "version": "1.0.0",
+  "description": "A tool for checking meta tags including Open Graph images, Twitter Cards, and SERP optimization.",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "meta-tags",
+    "checker",
+    "open-graph",
+    "twitter-card",
+    "serp"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.3"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "jest": "^26.6.0",
+    "@types/jest": "^26.0.0",
+    "@types/node": "^14.0.0"
+  }
+}
