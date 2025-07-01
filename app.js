@@ -7,7 +7,7 @@ async function fetchHtmlFromUrl(url) {
     if (!res.ok) throw new Error('Failed to fetch');
     return await res.text();
   } catch (e) {
-    alert('Could not fetch HTML. CORS or network error.');
+    document.getElementById('results').innerHTML = `<div class='alert alert-danger'>Could not fetch HTML. Most websites block this for security reasons (CORS).<br>Try another URL or paste HTML manually.<br><a href='https://github.com/himanshubijalwan/meta-tag-checker#faq' target='_blank'>Learn more</a>.</div>`;
     return '';
   }
 }

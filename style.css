@@ -36,3 +36,18 @@ body {
   background: #bfcfff;
   border-radius: 8px;
 }
+@media (max-width: 767px) {
+  .card-body {
+    padding: 1.2rem !important;
+  }
+  .container {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  #editMeta input {
+    font-size: 1em;
+  }
+  #htmlInput {
+    font-size: 1em;
+  }
+}
