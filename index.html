@@ -3,41 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meta Tag Checker - MDB Style</title>
+  <title>MetaTag Genie - SEO Meta Wizard</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body style="background: #f5f6fa;">
-  <div class="container py-4">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-10 col-lg-8 col-xl-7">
-        <div class="card shadow-lg border-0 rounded-4">
-          <div class="card-body p-3 p-md-4">
-            <div class="text-center mb-4">
-              <i class="fa-solid fa-tags fa-2x text-primary mb-2"></i>
-              <h2 class="fw-bold mb-1">Meta Tag Checker</h2>
-              <p class="text-muted mb-0">Generate, edit, and preview meta tags for SEO & social media</p>
+<body>
+  <header class="py-4 bg-white shadow-sm mb-4">
+    <div class="container text-center">
+      <h1 class="display-5 fw-bold mb-1" style="color:#4b0082;">MetaTag Genie</h1>
+      <p class="lead mb-0">Generate SEO-optimized meta tags instantly for your website.</p>
+    </div>
+  </header>
+  <div class="container mt-3 mb-5">
+    <div class="card shadow-lg border-0">
+      <div class="card-body">
+        <ul class="nav nav-tabs mb-3" id="metaTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="basic-tab" data-bs-toggle="tab" data-bs-target="#basic" type="button" role="tab">Basic Info</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="social-tab" data-bs-toggle="tab" data-bs-target="#social" type="button" role="tab">Social</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="schema-tab" data-bs-toggle="tab" data-bs-target="#schema" type="button" role="tab">Schema.org</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="preview-tab" data-bs-toggle="tab" data-bs-target="#preview" type="button" role="tab">Preview</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="metaTabContent">
+          <!-- Basic Info Tab -->
+          <div class="tab-pane fade show active" id="basic" role="tabpanel">
+            <div class="mb-3">
+              <label for="title" class="form-label">Page Title</label>
+              <input type="text" class="form-control" id="title" placeholder="Your Page Title">
             </div>
-            <form id="metaForm" autocomplete="off">
-              <div class="mb-3 input-group flex-nowrap">
-                <input type="text" id="urlInput" class="form-control" placeholder="Paste a URL for live meta check...">
-                <button id="fetchBtn" class="btn btn-primary" type="button"><i class="fa fa-globe"></i> Fetch</button>
-              </div>
-              <div class="mb-3">
-                <textarea id="htmlInput" class="form-control" rows="6" placeholder="Paste your HTML here..."></textarea>
-              </div>
-              <div class="d-flex flex-column flex-md-row gap-2 mb-3">
-                <button id="checkBtn" class="btn btn-success flex-fill" type="button"><i class="fa fa-search"></i> Check Meta Tags</button>
-                <button id="copyBtn" class="btn btn-outline-secondary flex-fill" type="button"><i class="fa fa-copy"></i> Copy HTML</button>
-              </div>
-            </form>
-            <div id="editMeta" class="mb-3"></div>
-            <div id="results" class="mb-3"></div>
-            <div id="previews"></div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Meta Description</label>
+              <textarea class="form-control" id="description" rows="2" placeholder="Short description of your page"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="keywords" class="form-label">Keywords (comma separated)</label>
+              <input type="text" class="form-control" id="keywords" placeholder="SEO, Meta Tags, Generator">
+            </div>
+            <div class="mb-3">
+              <label for="author" class="form-label">Author Name</label>
+              <input type="text" class="form-control" id="author" placeholder="Author Name">
+            </div>
+            <div class="mb-3">
+              <label for="siteName" class="form-label">Site Name</label>
+              <input type="text" class="form-control" id="siteName" placeholder="Site Name">
+            </div>
+            <div class="mb-3">
+              <label for="url" class="form-label">URL</label>
+              <input type="text" class="form-control" id="url" placeholder="https://yourwebsite.com">
+            </div>
+            <div class="mb-3">
+              <label for="favicon" class="form-label">Favicon URL</label>
+              <input type="text" class="form-control" id="favicon" placeholder="https://yourwebsite.com/favicon.ico">
+            </div>
+          </div>
+          <!-- Social Tab -->
+          <div class="tab-pane fade" id="social" role="tabpanel">
+            <div class="mb-3">
+              <label for="ogTitle" class="form-label">OG Title</label>
+              <input type="text" class="form-control" id="ogTitle" placeholder="Open Graph Title">
+            </div>
+            <div class="mb-3">
+              <label for="ogImage" class="form-label">OG Image URL</label>
+              <input type="text" class="form-control" id="ogImage" placeholder="https://yourwebsite.com/image.jpg">
+            </div>
+            <div class="mb-3">
+              <label for="twitterHandle" class="form-label">Twitter Handle</label>
+              <input type="text" class="form-control" id="twitterHandle" placeholder="@yourhandle">
+            </div>
+          </div>
+          <!-- Schema.org Tab -->
+          <div class="tab-pane fade" id="schema" role="tabpanel">
+            <div class="mb-3">
+              <label for="jsonld" class="form-label">JSON-LD (Schema.org)</label>
+              <textarea class="form-control" id="jsonld" rows="4" placeholder="Paste or generate JSON-LD here..."></textarea>
+            </div>
+          </div>
+          <!-- Preview Tab -->
+          <div class="tab-pane fade" id="preview" role="tabpanel">
+            <div class="bg-light p-3 rounded border" id="metaPreview">
+              <!-- Generated meta tags will be shown here -->
+            </div>
+            <div class="mt-3" id="livePreview">
+              <!-- Live card previews (Google, Facebook, Twitter) -->
+            </div>
           </div>
         </div>
-        <div class="text-center mt-4 text-muted small">Made with <span style="color:#e25555">♥</span> for SEOs & devs | <a href="https://github.com/himanshubijalwan/meta-tag-checker" target="_blank">GitHub</a></div>
+        <div class="text-end mt-4">
+          <button class="btn btn-primary" onclick="generateMetaTags()"><i class="fa fa-magic me-1"></i>Generate Tags</button>
+          <button class="btn btn-outline-secondary ms-2" onclick="copyTags()"><i class="fa fa-copy me-1"></i>Copy</button>
+        </div>
       </div>
     </div>
   </div>
